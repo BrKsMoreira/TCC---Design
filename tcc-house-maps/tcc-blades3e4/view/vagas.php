@@ -47,17 +47,29 @@
         
         <div class="fllw-vagas">
             <div class="topfllwvagas">
-                <select class="cmbbxvagas" name="trabalho">
-                        <option value="Trabalho">Trabalho</option>
-                        <option value="Estagio">Estágio</option>
+                <select class="cmbbxvagas" name="tipo">
+                        <option value="">Tipo de Trabalho</option>
+                        <option value="interno">Interno</option>
+                        <option value="remoto">Remoto</option>
+                        <option value="hibrido">Híbrido</option>
                 </select>
                 <select class="cmbbxvagas1" name="experiencia">
-                        <option value="Trabalho">Senioridade</option>
-                        <option value="Estagio">Estagiario</option>
-                        <option value="Junior">Junior</option>
+                        <option value="">Experiência</option>
+                        <option value="Estagio">Estágio</option>
+                        <option value="Nbasico">Nível Básico</option>
+                        <option value="Junior">Júnior</option>
+                        <option value="Nmedio">Nível Médio</option>
+                        <option value="Senior">Sênior</option>
+                        <option value="Lider">Líder</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Executivo">Executivo</option>
                 </select>
                 <select class="cmbbxvagas3" name="onde">
-                        <option value="city">Cidade</option>
+                        <option value="">Tipo de</option>
+                        <option value="PI">Período Integral</option>
+                        <option value="CPI">Contrato de Período Integral</option>
+                        <option value="MP">Meio Período</option>
+                        <option value="CA">Contrato de Aluguel</option>
                 </select>
             </div>
 

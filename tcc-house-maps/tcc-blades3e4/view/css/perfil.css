@@ -20,6 +20,14 @@
     margin-left: 2rem;
 }
 
+.perfilemp
+{
+    margin-top: -10rem;
+    margin-left: 2rem;
+    width: 15rem;
+    border-radius: 50%;
+}
+
 .nomeuser
 {
     font-size: 4rem;

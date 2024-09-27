@@ -1,5 +1,28 @@
 <?php Include("blades/top.php")?>
-<?php Include("../controller/consult-login.php")?>
+<?php 
+
+if(!isset($_SESSION)){
+   session_start();
+}
+
+if(isset($_POST['btnCadastro'])){
+
+   $_SESSION['nomeUsuario'] = $_POST['nome'];
+   $_SESSION['dataNasc'] = $_POST['data'];
+   $_SESSION['RG'] = $_POST['RG'];
+   $_SESSION['CPF'] = $_POST['CPF'];
+   $_SESSION['estadoCivil'] = $_POST['Estado_civil'];
+   $_SESSION['deficiencia'] = $_POST['def'];
+   $_SESSION['especifique'] = $_POST['espec'];
+   $_SESSION['genero'] = $_POST['sex'];
+   header("Location: ../view/cadastro2.php");
+}
+
+
+
+
+?>
+
 
 
 <div id="leftside">
@@ -12,7 +35,7 @@
        <div id="linhacd1"></div>
          <div class="triangulo"></div>
          <p id="subttl">Informações Pessoais</p>
-            <form action="../controller/funcao-create-user.php" method="POST">
+            <form action="" method="POST">
                <p id="lblcd1">Nome Completo</p>
                <input type="text" class="inputname" name="nome">
                <p id="lblcd2">Data de Nascimento</p>
@@ -33,7 +56,7 @@
                 </select>
 
                <p id="lblcd6">Possui algum tipo de deficiência?</p>
-               <select class="cmbbxcd2" name="deficiencia">
+               <select class="cmbbxcd2" name="def">
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                </select>
@@ -53,7 +76,7 @@
                <p class="txt_bx2">Você já tem uma conta?<a href="login.php" class="hl">Logar</a></p>
 
 
-               <button type="submit" href="cadastro2.php" class="btncd" style="    
+               <button type="submit" name="btnCadastro" class="btncd" style="    
                background-color:#01E581; 
                color: #fff; 
                border-radius:20px; 

@@ -1,6 +1,13 @@
 <?php Include("blades/top.php")?>
-<?php Include("../controller/consult-login.php")?>
 
+<?php  
+
+   if(!isset($_SESSION))
+   {
+      session_start();
+   }
+   
+?>
 
 <div id="leftside">
    <img src="../img/icon.png" class="logo">
@@ -17,11 +24,8 @@
                <input type="text" class="inputctt" name="CTT">
                <p id="lblcd32">Telefone para recado</p>
                <input type="text" class="inputrcd" name="RCD">
-
-               <p id="lblcd33">Número</p>
-               <input type="text" class="inputnum2" name="NUM">
                <p id="lblcd34">CAD Único</p>
-               <select class="cmbbxcd3">
+               <select class="cmbbxcd3" name="CAD">
                     <option value="S">Sim</option>
                     <option value="N">Não</option>
                 </select>
@@ -44,9 +48,9 @@
                <div class="ck7"><input type="checkbox" id="scales" name="scales">
                <label for="scales">Nenhum</label></div>
                <p id="lblcd37">Senha:</p>   
-               <input type="text" class="inputsen" name="TEM">
+               <input type="text" class="inputsen" name="SEN">
                <p id="lblcd39">Confirmar senha:</p>
-               <input type="text" class="inputcsen" name="TPR">
+               <input type="text" class="inputcsen" name="SEN2">
 
                <button type="submit" class="btncd2" style="    
                background-color:#01E581; 

@@ -1,5 +1,24 @@
-<?php Include("blades/top.php")?>
+<?php Include("blades/top.php");
+if(!isset($_SESSION)){
+   session_start();
+}
 
+if(isset($_POST['btnCadastro2'])){
+
+   $_SESSION['cidade'] = $_POST['CID'];
+   $_SESSION['rua'] = $_POST['RUA'];
+   $_SESSION['bairro'] = $_POST['BAI'];
+   $_SESSION['numero'] = $_POST['NUM'];
+   $_SESSION['CEP'] = $_POST['CEP'];
+   $_SESSION['referencia'] = $_POST['REF'];
+   $_SESSION['tempoRes'] = $_POST['TEM'];
+   $_SESSION['valorRes'] = $_POST['VLR'];
+   $_SESSION['tipoRes'] = $_POST['TPR'];
+   header("Location: ../controller/funcao-create-user.php");
+   }
+
+
+?>
 
 <div id="leftside">
    <img src="../img/icon.png" class="logo">
@@ -11,7 +30,7 @@
        <div id="linhacd2"></div>
          <div class="triangulo"></div>
          <p id="subttl">Endereço</p>
-            <form action="../controller/funcao-create-user.php" method="POST">
+            <form action="" method="POST">
                <p id="lblcd21">Cidade</p>
                <input type="text" class="inputcid" name="CID">
                <p id="lblcd22">Rua</p>
@@ -34,7 +53,7 @@
                <p id="lblcd29">Tipo de Residencia</p>
                <input type="text" class="inputtip" name="TPR">
 
-               <button type="submit" href="cadastro3.php" class="btncd2" style="    
+               <button type="submit" name="btnCadastro2" class="btncd2" style="    
                background-color:#01E581; 
                color: #fff; 
                border-radius:20px; 

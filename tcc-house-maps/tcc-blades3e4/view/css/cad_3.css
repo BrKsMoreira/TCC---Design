@@ -40,7 +40,7 @@
 {
     margin-left: 85rem;
     font-size: 2.2rem;
-    margin-top: -5rem;
+    margin-top: -4rem;
     position: absolute;
     font-weight: 550;
 }
@@ -49,7 +49,7 @@
 {
     margin-left: 110rem;
     font-size: 2.2rem;
-    margin-top: -9rem;
+    margin-top: -7rem;
     position: absolute;
     font-weight: 550;
 }
@@ -146,7 +146,7 @@
    border-radius: 5px;
    border-color: rgba(0,0,0,0.3);
    color: #444444;
-   transform: translateY(-130%);   
+   transform: translateY(-100%);   
 }
 
 

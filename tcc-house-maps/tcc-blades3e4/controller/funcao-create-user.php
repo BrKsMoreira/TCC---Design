@@ -1,11 +1,46 @@
-<?php 
-    include("../model/connect.php");
-    $sql1 = mysqli_query($connect, "INSERT INTO usuario(Nome, data_nascimento, RG, CPF, estado_civil, deficiencia, especifique, sexo) VALUES ('".$_POST["nome"]."','".$_POST["data"]."','". $_POST["RG"]. "','" . $_POST['CPF'] . "','" . $_POST['Estado_civil'] . "','" . $_POST['deficiencia'] . "','" . $_POST['espec'] . "','" . $_POST['sex'] . "')" );
-    header("location:../view/cadastro2.php");
 
-    $sql2 = mysqli_query($connect, "INSERT INTO usuario(cidade, rua, bairro, numero, CEP, ponto_referencia, tempo_de_residencia, valor_de_residencia, tipo_de_residencia)VALUES('".$_POST["CID"]."','".$_POST["RUA"]."','".$_POST["BAI"]."','".$_POST["NUM"]."','".$_POST["CEP"]."','".$_POST["REF"]."','".$_POST["TEM"]."','".$_POST["VLR"]."','" .$_POST["TPR"]."')");
-    header("location:../view/cadastro3.php");
+<?php include("../model/connect.php");
+
+if(!isset($_SESSION)){
+    session_start();
+ }
+
+ if (isset($_SESSION['nomeUsuario'], $_SESSION['RG'], $_SESSION['CPF'], $_SESSION['genero'], 
+            $_SESSION["CEP"], $_SESSION["rua"], $_SESSION["bairro"], $_SESSION["cidade"], 
+            $_SESSION["numero"], $_SESSION["tipoRes"], $_SESSION["tempoRes"], 
+            $_SESSION["valorRes"], $_SESSION["referencia"], $_SESSION['deficiencia'], 
+            $_SESSION['estadoCivil'], $_SESSION['especifique'])) {
+
+    // Cria um array com os dados que você quer exibir
+    $dados = [
+        $_SESSION['nomeUsuario'],
+        $_SESSION['RG'],
+        $_SESSION['CPF'],
+        $_SESSION['genero'],
+        $_SESSION["CEP"],
+        $_SESSION["rua"],
+        $_SESSION["bairro"],
+        $_SESSION["cidade"],
+        $_SESSION["numero"],
+        $_SESSION["tipoRes"],
+        $_SESSION["tempoRes"],
+        $_SESSION["valorRes"],
+        $_SESSION["referencia"],
+        $_SESSION['deficiencia'],
+        $_SESSION['estadoCivil'],
+        $_SESSION['especifique']
+    ];
+
+    // Faz um echo para cada valor no array
+    foreach ($dados as $dado) {
+        echo "'" . htmlspecialchars($dado, ENT_QUOTES) . "', ";
+    }
+} else {
+    echo "Algumas variáveis de sessão não estão definidas.";
+}
+
+mysqli_fetch_array(mysqli_query($connect, "INSERT INTO usuario (nome,RG,CPF,sexo,CEP,rua,bairro,cidade,numero,tipo_de_residencia,tempo_de_residencia,valor_de_residencia,referencia, deficiencia,estado_civil, especifique, data_nascimento) VALUES ('". $_SESSION['nomeUsuario'] ."','". $_SESSION['RG'] ."','". $_SESSION['CPF'] ."','". $_SESSION['genero']. "','". $_SESSION["CEP"]."','". $_SESSION["rua"]. "','". $_SESSION["bairro"]. "','". $_SESSION["cidade"]. "','". $_SESSION["numero"]. "','". $_SESSION["tipoRes"]. "','". $_SESSION["tempoRes"]. "','". $_SESSION["valorRes"]. "','". $_SESSION["referencia"] ."','". $_SESSION['deficiencia'] ."','". $_SESSION['estadoCivil'] ."','". $_SESSION['especifique']. "','". $_SESSION["dataNasc"] ."')"))
+?>
 
 
 
-?>  

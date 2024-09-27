@@ -24,7 +24,7 @@
          </form>
 
          <form action="cadastro.php">
-         <button class="btn_user" style="
+         <button name="btn_usuario" class="btn_user" style="
          width=;
          hight=40rem;
          border: 1px solid #fff;
