@@ -7,14 +7,16 @@
       session_start();
    }
 
+   if(isset($_POST['btnCadastro3'])){
+
    $_SESSION['telefone'] = $_POST['CTT'];
    $_SESSION['Recado'] = $_POST['RCD'];
    $_SESSION['CAD'] = $_POST['CAD'];
    $_SESSION['email'] = $_POST['EMA'];
-   $_SESSION['bene'] = $_POST['scales'];
+   $_SESSION['bene'] = $_POST['bene'];
    $_SESSION['senha'] = $_POST['SEN'];
-
-   
+   header("Location: ../controller/funcao-create-user.php");
+   }
 ?>
 
 <div id="leftside">
@@ -41,19 +43,19 @@
                <input type="text" class="inputema" name="EMA">
 
                <p id="lblcd36">Benefícios</p> 
-               <div class="ck1"><input type="checkbox" id="scales" name="scales">
+               <div class="ck1"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Bolsa Familia</label></div>
-               <div class="ck2"><input type="checkbox" id="scales" name="scales">
+               <div class="ck2"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Renda Cidadã</label></div>
-               <div class="ck3"><input type="checkbox" id="scales" name="scales">
+               <div class="ck3"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Aposentadoria</label></div>
-               <div class="ck4"><input type="checkbox" id="scales" name="scales">
+               <div class="ck4"><input type="checkbox" id="scales" name="bene">
                <label for="scales">BPC</label></div>
-               <div class="ck5"><input type="checkbox" id="scales" name="scales">
+               <div class="ck5"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Pensão</label></div>
-               <div class="ck6"><input type="checkbox" id="scales" name="scales">
+               <div class="ck6"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Outros</label></div>
-               <div class="ck7"><input type="checkbox" id="scales" name="scales">
+               <div class="ck7"><input type="checkbox" id="scales" name="bene">
                <label for="scales">Nenhum</label></div>
 
                <p id="lblcd37">Senha:</p>   
@@ -61,7 +63,7 @@
                <p id="lblcd39">Confirmar senha:</p>
                <input type="text" class="inputcsen" name="SEN2">
 
-               <button type="submit" class="btncd2" style="    
+               <button name="btnCadastro3" type="submit" class="btncd2" style="    
                background-color:#01E581; 
                color: #fff; 
                border-radius:20px; 

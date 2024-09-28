@@ -83,3 +83,19 @@ mysqli_fetch_array(mysqli_query($connect, "INSERT INTO usuario (email,senha,nome
    $_SESSION['tempoRes'] = $_POST['TEM'];
    $_SESSION['valorRes'] = $_POST['VLR'];
    $_SESSION['tipoRes'] = $_POST['TPR'];
+
+////////////////////////////////////////////////////////////////////////////
+
+$_SESSION['nomeEmp'] = $_POST['nome'];
+$_SESSION['dataEmp'] = $_POST['data'];
+$_SESSION['AreaA'] = $_POST['AA'];
+$_SESSION['CNPJ'] = $_POST['CNPJ'];
+$_SESSION['email'] = $_POST['EMAIL'];
+$_SESSION['senha'] = $_POST['SEN'];
+$_SESSION['cidadeEmp'] = $_POST['CID'];
+$_SESSION['ruaEmp'] = $_POST['RUA'];
+$_SESSION['paisEmp'] = $_POST['PAI'];
+$_SESSION['Estados'] = $_POST['estados'];
+$_SESSION['numero'] = $_POST['NUM'];
+$_SESSION['bairro'] = $_POST['BAI'];
+$_SESSION['CEP'] = $_POST['CEP'];

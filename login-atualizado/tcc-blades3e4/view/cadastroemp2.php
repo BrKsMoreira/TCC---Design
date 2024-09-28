@@ -1,6 +1,26 @@
 <?php Include("blades/top.php")?>
-<?php Include("../controller/consult-login.php")?>
+<?php 
 
+if(!isset($_SESSION))
+{
+   session_start();
+}
+
+if(isset($_POST['btnCadastroEmp2'])){
+
+$_SESSION['cidadeEmp'] = $_POST['CID'];
+$_SESSION['ruaEmp'] = $_POST['RUA'];
+$_SESSION['paisEmp'] = $_POST['PAI'];
+$_SESSION['Estados'] = $_POST['estados'];
+$_SESSION['numeroEmp'] = $_POST['NUM'];
+$_SESSION['bairroEmp'] = $_POST['BAI'];
+$_SESSION['CEP'] = $_POST['CEP'];
+$_SESSION['telefoneEmp'] = $_POST['TEL'];
+header("Location: ../controller/funcao-create-emp.php");
+}
+
+
+?>
 
 <div id="leftside">
    <img src="../img/icon.png" class="logo">
@@ -12,7 +32,7 @@
        <div id="linhacd2"></div>
          <div class="triangulo"></div>
          <p id="subttl">Endereço</p>
-            <form action="login.php" method="POST">
+            <form action="" method="POST">
                <p id="lblemp21">Cidade</p>
                <input type="text" class="inputcidemp" name="CID">
                <p id="lblemp22">Rua</p>
@@ -21,7 +41,7 @@
                <p id="lblemp23">País</p>
                <input type="text" class="inputpais" name="PAI">
                <p id="lblemp24">Estado</p>
-               <select class="cmbbxemp">
+               <select class="cmbbxemp" name="estados">
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
                     <option value="AP">Amapá</option>
@@ -53,12 +73,15 @@
                <p id="lblemp25">Número</p>
                <input type="text" class="inputnumemp" name="NUM">
 
+               <p id="lblemp28">Telefone</p>
+               <input type="text" class="inputtelemp" name="TEL">
+
                <p id="lblemp26">Bairro</p>
                <input type="text" class="inputbaiemp" name="BAI">
                <p id="lblemp27">CEP</p>   
                <input type="text" class="inputcepemp" name="CEP">
 
-               <button type="submit" href="cadastro3.php" class="btncd2" style="    
+               <button type="submit" name="btnCadastroEmp2" class="btncd2" style="    
                background-color:#01E581; 
                color: #fff; 
                border-radius:20px; 
